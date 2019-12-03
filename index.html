@@ -79,12 +79,13 @@
 	</div>
 
                     <script>
-                        var djString = document.getElementById('dj-input').value;
+                        var djString = escapeOutput(document.getElementById('dj-input').value);
+
                         var djNames = djString.split(",");
                         var djIndex = null;
 
                         function updateDJs() {
-                            var djString = document.getElementById('dj-input').value;
+                            var djString = escapeOutput(document.getElementById('dj-input').value);
                             djNames = djString.split(",");
                         }
 
@@ -138,6 +139,16 @@
 								refresh();
 							}
 						}
+						function escapeOutput(toOutput){
+							// Credit: https://stackoverflow.com/a/47180281
+							return toOutput.replace(/\&/g, '&amp;')
+							.replace(/\</g, '&lt;')
+							.replace(/\>/g, '&gt;')
+							.replace(/\"/g, '&quot;')
+							.replace(/\'/g, '&#x27')
+							.replace(/\//g, '&#x2F');
+						}
+
                 </script>
 
                 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
