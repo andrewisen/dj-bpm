@@ -55,23 +55,28 @@
             </div>
         </div>
 
-        <div class="mt-md-4">
+    	<div class="mt-4">
 
-            <div class="mt-4">
-                <button type="button" class="btn btn-lg btn-primary btn-block" onclick="refresh()">Refresh</button>
+        <button type="button" class="btn btn-lg btn-primary btn-block" onclick="refresh()">Refresh</button>
 
-                <div class="mt-4">
-                    <div class="input-group flex-nowrap">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">DJ Names</span>
-                        </div>
-                        <input id="dj-input" type="text" class="form-control" value="Calle, Lisa, Per, Frida, Erik, Mona" placeholder="Enter all DJ Names, use commas to seperate each name!" aria-label="DJ Names" aria-describedby="addon-wrapping">
-                    </div>
-                    <div class="mt-4">
+        <div class="mt-4">
 
-                        <button type="button" class="btn btn-lg btn-outline-primary btn-block" onclick="updateDJs()">Update DJs</button>
+		<div class="input-group flex-nowrap">
+			<div class="input-group-prepend">
+			    <span class="input-group-text" id="addon-wrapping">DJ Names</span>
+			</div>
+			<input id="dj-input" type="text" class="form-control" value="Calle, Lisa, Per, Frida, Erik, Mona" placeholder="Enter all DJ Names, use commas to seperate each name!" aria-label="DJ Names" aria-describedby="addon-wrapping">
+		</div>
+		
+		<div class="mt-4">
 
-                    </div>
+		<button type="button" class="btn btn-lg btn-outline-primary btn-block" onclick="updateDJs()">Update DJs</button>
+
+		<div class="mt-4">
+		
+		<p id="dj-next" class="h5 mb-3 font-weight-normal">Made by <a href="https://andrewisen.se/" target="_blank">André Wisén</a> - <a href="https://github.com/andrewisen/dj-bpm" target="_blank">GitHub Repo</a></p>
+
+	</div>
 
                     <script>
                         var djString = document.getElementById('dj-input').value;
