@@ -1,201 +1,161 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>DJ BPM Generator</title>
-  <meta name="description" content="DJ Random BPM">
-  <meta name="author" content="André Wisén">
+    <title>DJ BPM Generator</title>
+    <meta name="description" content="DJ Random BPM">
+    <meta name="author" content="André Wisén">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="css/custom.css" rel="stylesheet">
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-      }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
     </style>
 
 </head>
 
 <body class="text-center">
 
-<div class="form-signin">
-	<div style="background:White !important" class="jumbotron">
-	<h1 id="dj-current" class="h1 font-weight-normal">Calle</h1>
-    <h2 id="bpm-display" class="h2 mb-3 font-weight-normal">170</h2>
-</div>
-	<p id="dj-next" class="h5 mb-3 font-weight-normal"></p>
-
-    <div class="row">
-	  <div class="col-sm">
-		<div class="input-group flex-nowrap">
-		<div class="input-group-prepend">
-		<span class="input-group-text" id="addon-wrapping">Min</span>
-		</div>
-		<input type="text" class="form-control" type="number" value="70" min="50" max="200" id="bpm-min" placeholder="Minimum BPM" aria-label="Minimum BPM" aria-describedby="addon-wrapping">
-		</div>
-      
-      </div>
-        <div class="col-sm">
-		<div class="input-group flex-nowrap">
-		<div class="input-group-prepend">
-		<span class="input-group-text" id="addon-wrapping">Max</span>
-		</div>
-		<input type="text" class="form-control" type="number" value="180" min="50" max="200" id="bpm-max" placeholder="Maximum BPM" aria-label="Maximum BPM" aria-describedby="addon-wrapping">
-		</div>
-      
+    <div class="form-signin">
+        <div style="background:White !important" class="jumbotron">
+            <h1 id="dj-current" class="h1 font-weight-normal">Calle</h1>
+            <h2 id="bpm-display" class="h2 mb-3 font-weight-normal">170</h2>
         </div>
-        <div class="col-sm">
-			<div class="input-group flex-nowrap">
-			<div class="input-group-prepend">
-			<span class="input-group-text" id="addon-wrapping">Round</span>
-			</div>
-			<input type="text" class="form-control" type="number" value="5" min="0" max="25" id="bpm-round" placeholder="Rounding value"  aria-label="Rounding value" aria-describedby="addon-wrapping">
-			</div>
-        </div>
-    </div>
+        <p id="dj-next" class="h5 mb-3 font-weight-normal"></p>
 
-    <div class="mt-md-4">
+        <div class="row">
+            <div class="col-sm">
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Min</span>
+                    </div>
+                    <input type="text" class="form-control" type="number" value="70" min="50" max="200" id="bpm-min" placeholder="Minimum BPM" aria-label="Minimum BPM" aria-describedby="addon-wrapping">
+                </div>
 
-    <!--
+            </div>
+            <div class="col-sm">
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Max</span>
+                    </div>
+                    <input type="text" class="form-control" type="number" value="180" min="50" max="200" id="bpm-max" placeholder="Maximum BPM" aria-label="Maximum BPM" aria-describedby="addon-wrapping">
+                </div>
 
-    <div class="row">
-	  <div class="col-sm">
-            <div class="form-group row">
-
-                <label for="example-number-input" class="col-2 col-form-label"><b>Min</b></label>
-                <div class="col-10">
-                    <input class="form-control" type="number" value="70" min="50" max="200" id="bpm-min">
+            </div>
+            <div class="col-sm">
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Round</span>
+                    </div>
+                    <input type="text" class="form-control" type="number" value="5" min="0" max="25" id="bpm-round" placeholder="Rounding value" aria-label="Rounding value" aria-describedby="addon-wrapping">
                 </div>
             </div>
         </div>
-        <div class="col-sm">
 
-            <div class="form-group row">
-                <label for="example-number-input" class="col-2 col-form-label"><b>Max</b></label>
-                <div class="col-10">
-                    <input class="form-control" type="number" value="180" min="50" max="200" id="bpm-max">
-                </div>
-            </div>
+        <div class="mt-md-4">
 
-        </div>
-        <div class="col-sm">
-            <div class="form-group row">
-                <label for="example-number-input" class="col-2 col-form-label"><b>Round</b></label>
-                <div class="col-10">
-                    <input class="form-control" type="number" value="5" min="0" max="20" id="bpm-round">
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="mt-4">
+                <button type="button" class="btn btn-lg btn-primary btn-block" onclick="refresh()">Refresh</button>
 
--->
+                <div class="mt-4">
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">DJ Names</span>
+                        </div>
+                        <input id="dj-input" type="text" class="form-control" value="Calle, Lisa, Per, Frida, Erik, Mona" placeholder="Enter all DJ Names, use commas to seperate each name!" aria-label="DJ Names" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="mt-4">
 
+                        <button type="button" class="btn btn-lg btn-outline-primary btn-block" onclick="updateDJs()">Update DJs</button>
 
+                    </div>
 
+                    <script>
+                        var djString = document.getElementById('dj-input').value;
+                        var djNames = djString.split(",");
 
-<div class="mt-4">
-	<button type="button" class="btn btn-lg btn-primary btn-block" onclick="refresh()">Refresh</button>
+                        // djNames.length;
+                        var djIndex = null;
 
-		 <div class="mt-4">
-	<div class="input-group flex-nowrap">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="addon-wrapping">DJ Names</span>
-  </div>
-  <input id="dj-input" type="text" class="form-control" value="Calle, Lisa, Per, Frida, Erik, Mona" placeholder="Enter all DJ Names, use commas to seperate each name!" aria-label="DJ Names" aria-describedby="addon-wrapping">
-</div>
-<div class="mt-4">
+                        function updateDJs() {
+                            var djString = document.getElementById('dj-input').value;
+                            djNames = djString.split(",");
+                        }
 
-<button type="button" class="btn btn-lg btn-outline-primary btn-block" onclick="updateDJs()">Update DJs</button>
+                        djNames.forEach(displayCurrentDJ);
 
+                        function displayCurrentDJ(djName, index) {
+                            document.getElementById("demo1").innerHTML += djName + "<br>";
 
+                        }
 
-</div>	
+                        function refresh() {
+                            getRandomBPM();
+                            getNextDJ();
+                        }
 
+                        function getNextDJ() {
+                            if (djIndex == null) {
+                                djIndex = 0;
+                            } else if (djIndex == (djNames.length - 1)) {
+                                djIndex = 0;
+                            } else {
+                                djIndex += 1;
+                            }
 
+                            getUpcomingDJs(djIndex, 6);
 
-	<script> 
-		var djString = document.getElementById('dj-input').value;
-		var djNames = djString.split(",");
+                            document.getElementById("dj-current").innerHTML = "<b>" + djNames[djIndex] + "</b>";
+                        }
 
-		// djNames.length;
-		var djIndex = null;
+                        function getUpcomingDJs(djIndex, limit) {
+                            var text = "<b>Next DJs:</b><br>";
+                            for (i = 0; i < limit; i++) {
+                                djIndex += 1;
+                                if (djIndex >= (djNames.length)) {
+                                    djIndex = 0;
+                                }
+                                text += djNames[djIndex] + ", ";
+                            }
+                            document.getElementById("dj-next").innerHTML = text + "...<br>";
 
-		function updateDJs(){
-			var djString = document.getElementById('dj-input').value;
-			djNames = djString.split(",");
-		}
+                        }
 
+                        function getRandomBPM() {
+                            var min = Number(document.getElementById('bpm-min').value);
+                            var max = Number(document.getElementById('bpm-max').value);
+                            var round = Number(document.getElementById('bpm-round').value);
 
-		djNames.forEach(displayCurrentDJ);
-		
-		function displayCurrentDJ(djName, index) {
-			document.getElementById("demo1").innerHTML += djName + "<br>"; 
+                            var bpm = Math.random() * (max - min) + min;
+                            bpm = Math.round(bpm / round) * round;
+                            var bpmDisplay = bpm.toString() + " BPM";
+                            document.getElementById("bpm-display").innerHTML = bpmDisplay;
 
-		}
+                        }
+                    </script>
 
-		function refresh(){
-			getRandomBPM();
-			getNextDJ();
-		}
-
-
-		function getNextDJ(){
-			if (djIndex == null){
-				djIndex = 0;
-			} else if (djIndex == (djNames.length - 1)){
-				djIndex = 0;
-			} else {
-				djIndex += 1;
-			}
-			
-			getUpcomingDJs(djIndex, 6);
-
-
-			document.getElementById("dj-current").innerHTML = "<b>" + djNames[djIndex] + "</b>";
-		}
-
-		function getUpcomingDJs(djIndex,limit){
-			var text = "<b>Next DJs:</b><br>";
-			for (i = 0; i < limit; i++) {
-				djIndex += 1;
-				if (djIndex >= (djNames.length)){
-				 djIndex = 0;
-				}
-				text += djNames[djIndex] + ", ";
-			}
-			document.getElementById("dj-next").innerHTML = text + "...<br>";
-
-		}
-
-		function getRandomBPM(){ 
-			var min = Number(document.getElementById('bpm-min').value);
-			var max = Number(document.getElementById('bpm-max').value);
-			var round = Number(document.getElementById('bpm-round').value);
-
-			var bpm = Math.random() * (max - min) + min;
-			bpm = Math.round(bpm / round) * round;
-			var bpmDisplay = bpm.toString() + " BPM";
-			document.getElementById("bpm-display").innerHTML = bpmDisplay;
-
-		}
-	</script>
-
-
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+                    </script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+                    </script>
 </body>
+
 </html>
