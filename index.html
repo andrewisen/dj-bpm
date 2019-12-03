@@ -81,12 +81,7 @@
                             djNames = djString.split(",");
                         }
 
-                        djNames.forEach(displayCurrentDJ);
-
-                        function displayCurrentDJ(djName, index) {
-                            document.getElementById("demo1").innerHTML += djName + "<br>";
-
-                        }
+                      
 
                         function refresh() {
                             getRandomBPM();
@@ -131,7 +126,16 @@
                             document.getElementById("bpm-display").innerHTML = bpmDisplay;
 
                         }
-                    </script>
+
+						document.onkeydown = function(e){
+							// Credit: https://stackoverflow.com/a/14261148
+							e = e || window.event;
+							var key = e.which || e.keyCode;
+							if ((key===13) || (key===32)){
+								refresh();
+							}
+						}
+                </script>
 
                     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
                     </script>
