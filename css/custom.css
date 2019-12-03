@@ -44,10 +44,10 @@ body {
 }
 
 .jumbotron h1 {
-  /* Extra small devices (phones, less than 768px) */
+  /* DJ Name */
   font-size: 100px;
 }
 .jumbotron h2 {
-  /* Extra small devices (phones, less than 768px) */
+  /* BPM */
   font-size: 80px;
 }
